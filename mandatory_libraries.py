@@ -10,5 +10,4 @@ from pathlib import Path
 import pylab
 from dotenv import load_dotenv
 import requests
-import alpaca_trade_api as tradeapi
 import json
