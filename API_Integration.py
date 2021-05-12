@@ -30,11 +30,12 @@ def cryptoCompareContend_toDataFrame():
 def set_final_df():
     crypto_df = cryptoCompareContend_toDataFrame()
     avg_wages = csv_files.avg_wages_file
+    country_abbr = csv_files.countries_abbr_file
     final_df = ml.pd.merge(crypto_df,avg_wages,on='currency_code',how='left')
     final_df['avg_wage_crypto_value'] = final_df['avg_wage_value']/final_df['crypto_value']
-
+    final_df = ml.pd.merge(final_df,country_abbr, on='country_code',how='left')
     final_df = final_df[final_df['year'] > 2015]
+
+    final_df['year'] = ml.pd.to_datetime(final_df['year'], format='%Y')
     final_df.to_csv('final_df.csv', index=False)
     return final_df
-
-
