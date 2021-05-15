@@ -1,9 +1,9 @@
-## Mandatory libraries scrip ##
+## Mandatory libraries script ##
 
 Here are all the libraries used in our project. 
 It helps us out to not duplicate our code. Thus: a code efficient approach.
 
-## API Integration##
+## API Integration ##
  This script merges all our data sources into one Pandas dataframe.Thus: API data, CSV files' data is merged into one and unique dataframe. Everybody will use this unique dataframe in order to perform the required tasks.
 
 ## Python Graphics ##
